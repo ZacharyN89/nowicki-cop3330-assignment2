@@ -1,4 +1,8 @@
 /*
+UCF COP3330 Summer 2021 Assignment 2 Solution
+Copyright 2021 Zachary Nowicki
+
+
 Exercise 25 - Password Strength Indicator
 
 Functions help you abstract away complex operations, but they also help you build reusable components.
