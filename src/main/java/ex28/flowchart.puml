@@ -1,0 +1,8 @@
+@startuml
+:App;
+:Loop five times;
+:Add numbers;
+:Print results;
+
+
+@enduml
