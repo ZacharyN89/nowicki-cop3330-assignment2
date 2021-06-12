@@ -1,3 +1,7 @@
+/*
+UCF COP3330 Summer 2021 Assignment 2 Solution
+Copyright 2021 Zachary Nowicki
+*/
 package ex34;
 
 import java.util.ArrayList;
@@ -25,7 +29,7 @@ public class employeeList {
 
     public void removeFromList(){
         System.out.print("Enter an employee name to remove: ");
-        int index = employees.indexOf(in.next());
+        int index = employees.indexOf(in.nextLine());
 
         String kill = employees.remove(index);
 
@@ -34,5 +38,9 @@ public class employeeList {
 
     public int arraySize(){
         return employees.size();
+    }
+
+    public int maybe(){
+        return employees.indexOf("Moe Lester");
     }
 }
