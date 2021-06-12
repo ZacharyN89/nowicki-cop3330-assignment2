@@ -1,4 +1,8 @@
 /*
+UCF COP3330 Summer 2021 Assignment 2 Solution
+Copyright 2021 Zachary Nowicki
+
+
 Exercise 34 - Employee List Removal
 
 Sometimes you have to locate and remove an entry from a list based on some criteria. You may have a deck of cards and need to discard one so it’s no longer in play, or you may need to remove values from a list of valid inputs once they’ve been used. Storing the values in an array makes this process easier. Depending on your language, you may find it safer and more efficient to create a new array instead of modifying the existing one.
