@@ -1,3 +1,8 @@
+/*
+UCF COP3330 Summer 2021 Assignment 2 Solution
+Copyright 2021 Zachary Nowicki
+*/
+
 package ex39;
 
 import java.util.*;
@@ -65,24 +70,29 @@ public class database {
 
     public void reorderByLastName(){
     }
-/*
+
 
     public void printByLastName(){
-        String result = "Name                | Position          | Separation Date\n--------------------|-------------------|----------------\n"
-
+        String result = "Name                | Position          | Separation Date\n--------------------|-------------------|----------------\n";
 
         String[] sortedNames = orderByLastName();
         for(int i=0; i< sortedNames.length; i++){
+            System.out.print(sortedNames[i]);
             for(int j=0; j<data.size(); j++){
-                if(sortedNames[i].equals(data.get(j).get("Lastname"))){
-                    Map tool = data.get(i);
-                    String format = (String) tool.get("Lastname");
-                    result +=0 ;
+                Map<String , String> tool1 = data.get(j);
+                String check = tool1.get("Lastname");
+                if(sortedNames[i].equals(check)){
+                    Map<String , String> tool2 = data.get(j);
+                    String name = tool2.get("Firstname") + " " + tool2.get("Lastname");
+                    String format = String.format("%-20s|",name) +String.format("%-19s|",tool2.get("Position")) +String.format("%-20s",tool2.get("Separation Date")) + "\n";
+                    result += format ;
+                    break;
                 }
             }
         }
+        System.out.print(result);
 
     }
 
- */
+
 }
