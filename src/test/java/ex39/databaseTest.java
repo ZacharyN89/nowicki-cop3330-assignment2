@@ -15,7 +15,7 @@ class databaseTest {
     void orderByLastName() {
         database test = new database();
         test.makeDatabase();
-        String[] check = {""}
-        assertEquals("",test.printByLastName());
+        String[] check = test.orderByLastName();
+        assertEquals("Jackson",check[0]);
     }
 }
