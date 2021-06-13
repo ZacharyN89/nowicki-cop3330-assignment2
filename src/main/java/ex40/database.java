@@ -3,7 +3,7 @@ UCF COP3330 Summer 2021 Assignment 2 Solution
 Copyright 2021 Zachary Nowicki
 */
 
-package ex39;
+package ex40;
 
 import java.util.*;
 
@@ -54,44 +54,32 @@ public class database {
         data.add(employee6);
     }
 
-    public String[] orderByLastName(){
+    public void containsString(String find){
         //make a string of the lastnames and sort it. Save as a list of integers.
-        String result = "";
+        Map<String , String> tool;
+
         for(int i=0; i<data.size(); i++){
-            Map tool = data.get(i);
-            result += tool.get("Lastname")+" ";
-        }
+            tool = data.get(i);
+            String firstnameCheck = tool.get("Firstname");
+            String lastnameCheck = tool.get("Lastname");
+            if (firstnameCheck.contains(find) || lastnameCheck.contains(find)){
 
-        String[] order= result.split(" ");
-        Arrays.sort(order);
-
-        return order;
-    }
-
-    public void reorderByLastName(){
-    }
-
-
-    public void printByLastName(){
-        String result = "Name                | Position          | Separation Date\n--------------------|-------------------|----------------\n";
-
-        String[] sortedNames = orderByLastName();
-        for(int i=0; i< sortedNames.length; i++){
-            for(int j=0; j<data.size(); j++){
-                Map<String , String> tool1 = data.get(j);
-                String check = tool1.get("Lastname");
-                if(sortedNames[i].equals(check)){
-                    Map<String , String> tool2 = data.get(j);
-                    String name = tool2.get("Firstname") + " " + tool2.get("Lastname");
-                    String format = String.format("%-20s|",name) +String.format("%-19s|",tool2.get("Position")) +String.format("%-20s",tool2.get("Separation Date")) + "\n";
-                    result += format ;
-                    break;
-                }
+            } else {
+                data.remove(i);
+                i--;
             }
         }
-        System.out.print(result);
-
     }
 
+    public void printDatabase(){
+        String result = "Name                | Position          | Separation Date\n--------------------|-------------------|----------------\n";
 
+        for(int i=0; i<data.size(); i++){
+            Map<String , String> tool = data.get(i);
+            String name = tool.get("Firstname") + " " + tool.get("Lastname");
+            String format = String.format("%-20s|",name) +String.format("%-19s|",tool.get("Position")) +String.format("%-20s",tool.get("Separation Date")) + "\n";
+            result += format ;
+        }
+        System.out.print(result);
+    }
 }
